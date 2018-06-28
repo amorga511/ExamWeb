@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="appMain">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Title</title>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/css_exam.css" />
+</head>
+<body ng-controller="ctrl_1" style="background-color:#848484">
+<div class="container">
+	<div class="jumbotron">
+		<h3>Evaluacion Virtual</h3>
+		<br />
+		<hr />
+		<div class="form-inline">Identidad Alumnto
+			<input type="text" class="form-control" placeholder="" ng-model="id_alumno" />
+			<button type="button" class="btn btn-primary" ng-click="getExamen()">Buscar</button>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-xs-12">
+				<table class="table table-striped">
+					<thead><tr style="font-size:0.9em"><th></th><th>EXAMEN</th><th>ASIGNATURA</th><th>CATEDRATICO</th><th>ALUMNO</th><th>TIEMPO</th></tr></thead>
+					<tbody>
+						<tr ng-repeat="rowx in jsn_examenes" style="font-size:0.8em">
+							<td><a href="exam.html?p1={{rowx.alumno_id}}&p2={{rowx.id}}" id="{{rowx.id}}">Realizar</a></td>
+							<td>{{rowx.title}}</td>
+							<td>{{rowx.asignatura}}</td>
+							<td>{{rowx.catedratico}}</td>
+							<td>{{rowx.alumno}}</td>
+							<td>{{rowx.tiempo}}mnts</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>	
+</div>
+</body>
+<script type="text/javascript" src="js/jquery_3.3.1_.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/angular_1_2_min.js"></script>
+<script type="text/javascript" src="js/js_index.js"></script>
+<script type="text/javascript">
+	//var parametros = getParams();
+	//console.log(parametros);
+</script>
+</html>

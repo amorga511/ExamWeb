@@ -1,0 +1,18 @@
+/* estilo principal */
+
+.dv_q {
+	background-color: #D8D8D8;
+	border:solid 1px gray;
+	width: 90%;
+	max-height: 80%;
+}
+
+.p_pregunta{
+	border:solid 1px gray;
+	background-color: #D8D8D8;
+}
+
+.op{
+	padding-left: 5px;
+	font-size: 0.9em;
+}

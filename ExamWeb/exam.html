@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="appMain">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Title</title>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/css_exam.css" />
+</head>
+<body ng-controller="ctrl_1" style="background-color:#848484">
+<div class="container" style="background-color:white">
+	<div class="row">
+		<div class="col-xs-9">
+			<br /><br />
+			<label>{{exam_title}}</label><br />
+			<label>{{catedratico}}</label><br />
+			<label>{{alumno}}</label><br /><br />
+		</div>
+		<div class="col-xs-3">
+			<br /><br />
+			Tiempo: <div id="reloj"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-8">
+			q1q2
+			<br /><br />
+		</div>
+	</div>
+	<div class="col-xs-12" style="margin-bottom:10px"  ng-repeat='rowx in preguntas_exm'>
+		<table width="100%" cellspacing="10">
+			<tr>
+				<td width="25%" align="center" style="background:#BDBDBD;">{{rowx.num}}</td>
+				<td style="background:#E6E6E6;"><label style="padding:10px">{{rowx.q}}</label><br />
+					<label class="op" style="padding-left:10px"><input type="radio" name="q{{rowx.id}}" id="q{{rowx.id}}a" ng-click="repuesta($event)" /> a) {{rowx.op1}}</label><br />
+					<label class="op" style="padding-left:10px"><input type="radio" name="q{{rowx.id}}" id="q{{rowx.id}}b" ng-click="repuesta($event)"/> b) {{rowx.op2}}</label><br />
+					<label class="op" style="padding-left:10px"><input type="radio" name="q{{rowx.id}}" id="q{{rowx.id}}c" ng-click="repuesta($event)"/> c) {{rowx.op3}}</label><br />
+					<label class="op" style="padding-left:10px"><input type="radio" name="q{{rowx.id}}" id="q{{rowx.id}}d" ng-click="repuesta($event)"/> d) {{rowx.op4}}</label><br />
+				</td>
+			</tr>
+		</table>		
+	</div>
+<button type="button" class="btn btn-primary" ng-click="guardarRespuestas()">Terminar y Guardar</button>
+	
+</div>
+</body>
+<script type="text/javascript" src="js/jquery_3.3.1_.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/angular_1_2_min.js"></script>
+<script type="text/javascript" src="js/js_exam.js"></script>
+<script type="text/javascript">
+	parametros = eval(getParams());
+	//console.log(parametros.p1);
+</script>
+</html>
